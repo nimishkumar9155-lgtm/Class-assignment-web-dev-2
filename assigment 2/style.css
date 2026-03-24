@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+*{
+	margin:0;
+	padding:0;
+	font-family: 'DM sans','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+	background-color: rgb(3, 42, 114);
+}
+h1{
+	text-align: center;
+	height: 10vh;
+	width: 100vw;
+	color: cornflowerblue;
+}
+#container{
+	height: 90vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	gap: 5%;
+}
+.form{
+	height: 80%;
+	width: 40%;
+	background-color: whitesmoke;
+	border-radius: 1vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 5vh;
+}
+.form input{
+	font-size: 1.2rem;
+	padding: 1vh 1vw;
+	border-radius: 1vw;
+	border: 2px solid black;
+}
+.form input:focus{
+	outline: none;
+}
+.form input[type='submit']{
+	padding: 1vh 1vw;
+	background-color: rgb(255, 85, 0);
+	cursor: pointer;
+	color: white;
+	font-weight: 500;
+}
+#history{
+	height: 45%;
+	width: 90%;
+	overflow-y: scroll;
+}
+#history p{
+	color: white;
+	background-color: rgb(225, 85, 0);
+	display: inline-block;
+	padding: .7vh .7vw;
+	border-radius: 1vmin;
+	transition-duration: 200ms;
+	margin: 0.5vh 1vw;
+}
+#history p:hover{
+	cursor: pointer;
+	border-radius: 2vmin;
+	transform: scale(1.1);
+	outline: 1px solid black;
+}
+.result{
+	height: 80%;
+	width: 40%;
+	background-color: whitesmoke;
+	border-radius: 1vw;
+}
+.result h2{
+	text-align: center;
+	padding: 2vh 0;
+}
+.details{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 85%;
+	width: 100%;
+}
+.info-strip{
+	width: 95%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgb(219, 219, 219);
+	padding: 3vh 0;
+	font-size: 1.2rem;
+	border-left: 1vmin solid rgb(255, 85, 0);
+	transition-duration: 200ms;
+	transition-timing-function: ease-out;
+}
+.info-strip:hover{
+	cursor: pointer;
+	transform: scale(1.2);
+	border: none;
+	outline: 0.8vmin solid rgb(225, 85, 0);
+	background-color: rgba(197, 197, 197, 1);
+	border-radius: 2vmin;
+}
+.info-strip p{
+	padding: 0 2vw;
+}
+
+
+/* Mobile & Tablet Adjustments */
+@media screen and (max-width: 768px) {
+    #container {
+        flex-direction: column; /* Stacks the form and result vertically */
+        height: auto;           /* Allows the page to grow with content */
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    .form, .result {
+        width: 90%;             /* Takes up most of the screen width */
+        height: auto;           /* Let content define the height */
+        padding-bottom: 30px;
+        border-radius: 15px;    /* Using px for more consistent corners on mobile */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin: 20px 0;
+    }
+
+    .form input {
+        width: 80%;             /* Larger touch targets for mobile users */
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .info-strip {
+        font-size: 1rem;
+        padding: 15px 0;
+    }
+
+    /* Prevent the hover scale from breaking the mobile layout */
+    .info-strip:hover {
+        transform: scale(1.05); 
+    }
+
+    #history {
+        height: 150px;          /* Fixed height for history scroll on mobile */
+    }
+}
+
+/* Small Phone Adjustments */
+@media screen and (max-width: 480px) {
+    .info-strip {
+        flex-direction: column; /* Stack label and value if screen is tiny */
+        gap: 5px;
+        text-align: center;
+    }
+}
