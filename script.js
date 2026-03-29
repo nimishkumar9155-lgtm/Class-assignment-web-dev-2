@@ -25,7 +25,7 @@ let sampleEvent =
         }
     ]
 
-//   create event card  
+
 function createEventCard(eventData){
     const card = document.createElement("div");
     card.innerHTML=`
