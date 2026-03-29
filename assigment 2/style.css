@@ -112,20 +112,19 @@ h1{
 }
 
 
-/* Mobile & Tablet Adjustments */
 @media screen and (max-width: 768px) {
     #container {
-        flex-direction: column; /* Stacks the form and result vertically */
-        height: auto;           /* Allows the page to grow with content */
+        flex-direction: column; 
+        height: auto;           
         padding: 20px 0;
         gap: 20px;
     }
 
     .form, .result {
-        width: 90%;             /* Takes up most of the screen width */
-        height: auto;           /* Let content define the height */
+        width: 90%;             
+        height: auto;          
         padding-bottom: 30px;
-        border-radius: 15px;    /* Using px for more consistent corners on mobile */
+        border-radius: 15px;   
     }
 
     h1 {
@@ -134,7 +133,7 @@ h1{
     }
 
     .form input {
-        width: 80%;             /* Larger touch targets for mobile users */
+        width: 80%;             
         font-size: 1rem;
         border-radius: 8px;
     }
@@ -144,20 +143,20 @@ h1{
         padding: 15px 0;
     }
 
-    /* Prevent the hover scale from breaking the mobile layout */
+  
     .info-strip:hover {
         transform: scale(1.05); 
     }
 
     #history {
-        height: 150px;          /* Fixed height for history scroll on mobile */
+        height: 150px;       
     }
 }
 
-/* Small Phone Adjustments */
+
 @media screen and (max-width: 480px) {
     .info-strip {
-        flex-direction: column; /* Stack label and value if screen is tiny */
+        flex-direction: column; 
         gap: 5px;
         text-align: center;
     }
