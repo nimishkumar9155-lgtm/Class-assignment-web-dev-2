@@ -3,35 +3,100 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>EVENTRIX — Event Planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="mainContainer">
-      <div id="formContainer">
-        <h1>Add New Event</h1>
-        <form id="eventForm">
-          <input type="text" id="eventName" placeholder="Event Name" required />
-          <input type="date" id="eventDate" required />
-          <textarea
-            id="eventDescription"
-            placeholder="Event Description"
-            required
-          ></textarea>
-          <select id="eventPriority">
-            <option value="Low Priority">Low Priority</option>
-            <option value="Medium Priority">Medium Priority</option>
-            <option value="High Priority">High Priority</option>
-          </select>
-          <button type="button" id="add-btn">Add Event</button>
-        </form>
-      </div>
-
-      <div id="eventContainer">
-        <h1>Your Events</h1>
-        <div id="eventList"></div>
-      </div>
+    <div class="bg-orbs">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
     </div>
+
+    <header class="site-header">
+      <div class="logo">
+        <span class="logo-dot"></span>
+        EVENTRIX
+      </div>
+      <div class="header-meta">Event Manager <span class="version">v2.0</span></div>
+    </header>
+
+    <div id="mainContainer">
+      <!-- FORM PANEL -->
+      <aside id="formPanel">
+        <div class="panel-label">NEW EVENT</div>
+        <h1 class="panel-title">Plan<br /><em>Something</em><br />Great.</h1>
+
+        <form id="eventForm">
+          <div class="field-group">
+            <label for="eventName">Event Name</label>
+            <input type="text" id="eventName" placeholder="e.g. Design Summit 2026" required autocomplete="off" />
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label for="eventDate">Date</label>
+              <input type="date" id="eventDate" required />
+            </div>
+            <div class="field-group">
+              <label for="eventTime">Time</label>
+              <input type="time" id="eventTime" />
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="eventPriority">Priority</label>
+            <select id="eventPriority">
+              <option value="Low">🟢 Low Priority</option>
+              <option value="Medium" selected>🟡 Medium Priority</option>
+              <option value="High">🔴 High Priority</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="eventDescription">Description</label>
+            <textarea id="eventDescription" placeholder="What's this event about?" rows="3"></textarea>
+          </div>
+
+          <button type="button" id="add-btn">
+            <span class="btn-text">Add Event</span>
+            <span class="btn-icon">→</span>
+          </button>
+        </form>
+      </aside>
+
+      <!-- EVENTS PANEL -->
+      <main id="eventPanel">
+        <div class="events-header">
+          <div>
+            <div class="panel-label">YOUR EVENTS</div>
+            <h2 class="events-title">Upcoming<br /><em>Schedule</em></h2>
+          </div>
+          <div class="events-controls">
+            <span id="eventCount" class="event-count">0 events</span>
+            <button id="clearAllBtn" class="clear-btn">Clear All</button>
+          </div>
+        </div>
+
+        <div id="filterBar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="High">High</button>
+          <button class="filter-btn" data-filter="Medium">Medium</button>
+          <button class="filter-btn" data-filter="Low">Low</button>
+        </div>
+
+        <div id="eventList">
+          <div class="empty-state">
+            <div class="empty-icon">◇</div>
+            <p>No events yet.<br />Add your first one.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
