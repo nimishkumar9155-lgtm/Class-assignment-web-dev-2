@@ -1,7 +1,3 @@
-// =============================================
-//   EVENTRIX — script.js
-// =============================================
-
 const eventForm        = document.getElementById("eventForm");
 const eventNameInput   = document.getElementById("eventName");
 const eventDateInput   = document.getElementById("eventDate");
