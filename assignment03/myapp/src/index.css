@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Teko:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Teko', sans-serif;
+  background-color: #050000;
+  
+  /* Fiery / Iron Man Background Animation */
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(255, 50, 0, 0.15), transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(255, 165, 0, 0.1), transparent 50%),
+    linear-gradient(45deg, #1a0000, #330000, #4d0000, #1a0000);
+  background-size: 300% 300%;
+  animation: fireBg 6s ease infinite;
+  
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem 2rem;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Fiery sparks effect */
+body::before, body::after {
+  content: "";
+  position: fixed;
+  width: 100vw; height: 100vh;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image: 
+    radial-gradient(rgba(255,100,0,0.8) 1px, transparent 1px),
+    radial-gradient(rgba(255,50,0,0.8) 1px, transparent 1px);
+  background-size: 100px 100px, 150px 150px;
+  background-position: 0 0, 50px 50px;
+  opacity: 0.3;
+  animation: sparkFloat 10s linear infinite;
+}
+
+body::after {
+  background-size: 200px 200px, 250px 250px;
+  animation: sparkFloat 15s linear infinite reverse;
+  opacity: 0.1;
+}
+
+@keyframes sparkFloat {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-50px) scale(1.1); }
+  100% { transform: translateY(-100px) scale(1); }
+}
+
+@keyframes fireBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+::selection {
+  background: #ff3300;
+  color: #fff;
+  text-shadow: 0 0 8px #ffeb3b;
+}
+
+/* Aggressive Iron Man Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #110000;
+  border-left: 2px solid #330000;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff0000, #ff8c00);
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ff3300;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffea00, #ff3300);
+  box-shadow: 0 0 15px #ffea00;
+}
